@@ -40,7 +40,6 @@ class SMS_API(Resource):
 
 
 api.add_resource(SMS_API, '/service/sms/<string:num>')
-api.add_resource(Email_API, '/service/email/<string:email_id>')
 
 if __name__ == '__main__':
     app.run(debug=True)
