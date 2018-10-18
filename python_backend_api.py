@@ -38,20 +38,6 @@ class SMS_API(Resource):
         # else:
         #     return {"success": "false"}
 
-class Email_API(Resource):
-    def get(self, email_id):
-        return {email_id: emails[email_id]}
-    
-    def post(self, email_id):
-        emails.setdefault(email_id, []).append(request.form['data'])
-
-        #判断邮箱-Unstable
-        str = r'^[0-9a-zA-Z_]{0,19}@[0-9a-zA-Z]{1,13}\.[net,edu]{0,}[\.]?[com,cn]{1,}$'
-        
-        if re.match(str, email_id):
-            return {"success": "true"}
-        else:
-            return {"success": "False"}
 
 api.add_resource(SMS_API, '/service/sms/<string:num>')
 api.add_resource(Email_API, '/service/email/<string:email_id>')
