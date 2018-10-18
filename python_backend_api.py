@@ -15,7 +15,6 @@ app.config.update(RESTFUL_JSON=dict(ensure_ascii=False))
 
 #储存数据的字典
 sms = {}
-emails = {}
 
 class SMS_API(Resource):
     # def get(self, num):
