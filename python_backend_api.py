@@ -5,7 +5,12 @@
 from flask import Flask, request
 from flask_restful import Resource,Api
 import re
+<<<<<<< HEAD
 import demo_sms_send
+=======
+from dysms_python import demo_sms_send
+
+>>>>>>> zyc
 
 app = Flask(__name__)
 api = Api(app)
@@ -13,14 +18,21 @@ api = Api(app)
 #使JSON中文不乱码
 app.config.update(RESTFUL_JSON=dict(ensure_ascii=False))
 
+<<<<<<< HEAD
 #储存数据的字典
 sms = {}
+=======
+SMS_ID = 0
+SMS_KEY = "none"
+SMS_SIGN = 'none'
+>>>>>>> zyc
 
 class SMS_API(Resource):
     # def get(self, num):
     #     return {num: sms[num]}
     
     def post(self, num):
+<<<<<<< HEAD
         
         Response = demo_sms_send.send_sms(business_id='none', phone_numbers=num, sign_name='none', template_code='none', template_param='none')
         return Response
@@ -36,6 +48,13 @@ class SMS_API(Resource):
         #     return {"success" : "true"}
         # else:
         #     return {"success": "false"}
+=======
+        name = request.form['name']
+        Response = demo_sms_send.send_sms(business_id=SMS_ID, phone_numbers=num, sign_name=SMS_SIGN, template_code=SMS_KEY, template_param={"name": name})
+        Response = Response.decode(encoding='UTF-8',errors='strict')
+
+        return Response
+>>>>>>> zyc
 
 
 api.add_resource(SMS_API, '/service/sms/<string:num>')

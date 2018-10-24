@@ -1,2 +1,8 @@
 #SMS_KEY
+<<<<<<< HEAD
 dysms_python
+=======
+dysms_python/dist/
+dysms_python/__pycache__/
+const.py
+>>>>>>> zyc
