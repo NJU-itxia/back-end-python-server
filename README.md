@@ -11,13 +11,13 @@
 ## 步骤
 1. 
 ```bash
-git clone https://github.com/NJU-itxia/back-end-python-server.git
+$git clone https://github.com/NJU-itxia/back-end-python-server.git
 ```
 2. 
 ```bash
-cd dysms_python
+$cd dysms_python
 ```
 3. 
 ```bash
-python setup.py install
+$python setup.py install
 ```
