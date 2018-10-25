@@ -17,9 +17,17 @@ app.config.update(RESTFUL_JSON=dict(ensure_ascii=False))
 
 class SMS_API(Resource):   
     def post(self, num):
-        name = request.form['name']
+        # name = request.form['name']
+        code = request.form['code']
 
-        Response = demo_sms_send.send_sms(business_id=config.SMS_ID, phone_numbers=num, sign_name=config.SMS_SIGN, template_code=config.SMS_CODE, template_param={"name": name})
+        #模板变量
+        params = {
+            # 'name' : name,
+            'code' : code
+        }
+
+        Response = demo_sms_send.send_sms(business_id=config.SMS_ID, phone_numbers=num, sign_name=config.SMS_SIGN, template_code=config.SMS_CODE, template_param=params)
+        config.SMS_ID = config.SMS_ID + 1
 
         #阿里云错误代码为bytes类型，会乱码
         Response = Response.decode(encoding='UTF-8',errors='strict')
