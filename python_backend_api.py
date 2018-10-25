@@ -15,10 +15,7 @@ api = Api(app)
 app.config.update(RESTFUL_JSON=dict(ensure_ascii=False))
 
 
-class SMS_API(Resource):
-    # def get(self, num):
-    #     return {num: sms[num]}
-    
+class SMS_API(Resource):   
     def post(self, num):
         name = request.form['name']
 
