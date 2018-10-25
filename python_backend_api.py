@@ -31,9 +31,11 @@ class SMS_API(Resource):
 
         #阿里云错误代码为bytes类型，会乱码
         Response = Response.decode(encoding='UTF-8',errors='strict')
-
-        return Response
-
+        
+        if 'OK' in Response:
+            return {'success':True}
+        else:
+            return {'success':False}
 
 api.add_resource(SMS_API, '/service/sms/<string:num>')
 
