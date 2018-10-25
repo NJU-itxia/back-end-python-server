@@ -8,8 +8,16 @@
 2. 修改配置文件config_example.py，并改名为config.py
 3. 执行python_backend_api.py
 
-##步骤
+## 步骤
 1. 
 ```bash
 git clone https://github.com/NJU-itxia/back-end-python-server.git
+```
+2. 
+```bash
+cd dysms_python
+```
+3. 
+```bash
+python setup.py install
 ```
