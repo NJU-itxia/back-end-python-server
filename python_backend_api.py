@@ -4,7 +4,6 @@
 
 from flask import Flask, request
 from flask_restful import Resource,Api
-import re
 from dysms_python import demo_sms_send
 import config
 
@@ -24,7 +23,7 @@ class SMS_API(Resource):
         name = request.form['name']
 
         Response = demo_sms_send.send_sms(business_id=config.SMS_ID, phone_numbers=num, sign_name=config.SMS_SIGN, template_code=config.SMS_CODE, template_param={"name": name})
-        
+
         #阿里云错误代码为bytes类型，会乱码
         Response = Response.decode(encoding='UTF-8',errors='strict')
 
