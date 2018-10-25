@@ -1,5 +1,5 @@
 #SMS_KEY
 dysms_python/dist/
 dysms_python/__pycache__/
-const.py
+dysms_python/const.py
 config.py
