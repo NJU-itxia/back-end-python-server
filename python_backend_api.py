@@ -22,7 +22,10 @@ class SMS_API(Resource):
     
     def post(self, num):
         name = request.form['name']
+
         Response = demo_sms_send.send_sms(business_id=config.SMS_ID, phone_numbers=num, sign_name=config.SMS_SIGN, template_code=config.SMS_CODE, template_param={"name": name})
+        
+        #阿里云错误代码为bytes类型，会乱码
         Response = Response.decode(encoding='UTF-8',errors='strict')
 
         return Response
