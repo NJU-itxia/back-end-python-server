@@ -6,6 +6,7 @@ from flask import Flask, request
 from flask_restful import Resource,Api
 import re
 from dysms_python import demo_sms_send
+import config
 
 
 app = Flask(__name__)
@@ -14,9 +15,6 @@ api = Api(app)
 #使JSON中文不乱码
 app.config.update(RESTFUL_JSON=dict(ensure_ascii=False))
 
-SMS_ID = 0
-SMS_KEY = "none"
-SMS_SIGN = 'none'
 
 class SMS_API(Resource):
     # def get(self, num):
@@ -24,7 +22,7 @@ class SMS_API(Resource):
     
     def post(self, num):
         name = request.form['name']
-        Response = demo_sms_send.send_sms(business_id=SMS_ID, phone_numbers=num, sign_name=SMS_SIGN, template_code=SMS_KEY, template_param={"name": name})
+        Response = demo_sms_send.send_sms(business_id=config.SMS_ID, phone_numbers=num, sign_name=config.SMS_SIGN, template_code=config.SMS_CODE, template_param={"name": name})
         Response = Response.decode(encoding='UTF-8',errors='strict')
 
         return Response
