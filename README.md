@@ -22,14 +22,14 @@ $ cd dysms_python
 $ python setup.py install
 ```
 4. 
-'''bash
-$ vim const_example.py #注意修改其中内容
+```bash
+$ vim const_example.py #注意修改参数
 $ rename const_example.py const.py const_example.py
 $ cd ..
-$ vim config_example.py #注意修改
+$ vim config_example.py #注意修改参数
 $ rename config_example.py config.py config_example.py
-'''
+```
 5. 
-‘’‘bash
+```bash
 python python_backend_api.py
-'''
+```
