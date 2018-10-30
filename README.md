@@ -4,7 +4,7 @@
 - dysms_python 是aliyun的接口文件
 
 ## <table><tr><td bgcolor=yellow><font color=red>注意事项</font></td></tr></table>
-1. 修改dysms——python文件夹中的const_example.py文件参数，并改名为const.py
+1. 修改dysms_python文件夹中的const_example.py文件参数，并改名为const.py
 2. 修改配置文件config_example.py，并改名为config.py
 3. 完成上述步骤才可以执行python_backend_api.py
 
