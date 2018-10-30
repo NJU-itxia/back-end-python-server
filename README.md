@@ -31,5 +31,5 @@ $ rename config_example.py config.py config_example.py
 ```
 5. 
 ```bash
-python python_backend_api.py
+$ python python_backend_api.py
 ```
