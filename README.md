@@ -3,6 +3,9 @@
 - venv是一个python的虚拟环境
 - dysms_python 是aliyun的接口文件
 
+## 警告！！
+- 命令行运行python_backend_api.py文件时，可能会发生导入错误，此时请修改导入方式，在所导入文件的所在目录下添加__init__.py空文件，按照包的方式导入。
+
 ## <font color=red>注意事项</font>
 1. 修改dysms_python文件夹中的const_example.py文件参数，并改名为const.py
 2. 修改配置文件config_example.py，并改名为config.py
